@@ -1,11 +1,13 @@
-# api documentation for  [gulp-file-include (v1.0.0)](https://github.com/coderhaoxin/gulp-file-include#readme)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-file-include.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-file-include)
+# api documentation for  [gulp-file-include (v1.1.0)](https://github.com/coderhaoxin/gulp-file-include#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-file-include.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-file-include) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-file-include.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-file-include)
 #### a gulp plugin for file include
 
 [![NPM](https://nodei.co/npm/gulp-file-include.png?downloads=true)](https://www.npmjs.com/package/gulp-file-include)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-gulp_file_include_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-gulp-file-include%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -32,11 +34,11 @@
     ],
     "dependencies": {
         "balanced-match": "^0.4.2",
-        "concat-stream": "^1.5.2",
+        "concat-stream": "^1.6.0",
         "extend": "^3.0.0",
         "flatnest": "^1.0.0",
-        "gulp-util": "^3.0.7",
-        "through2": "^2.0.1"
+        "gulp-util": "^3.0.8",
+        "through2": "^2.0.3"
     },
     "description": "a gulp plugin for file include",
     "devDependencies": {
@@ -48,13 +50,13 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "37f492127a1090b79a72ad8c2c5e18ce56858eb2",
-        "tarball": "https://registry.npmjs.org/gulp-file-include/-/gulp-file-include-1.0.0.tgz"
+        "shasum": "2c7204332020d56fe29107e81914e4a923f2826d",
+        "tarball": "https://registry.npmjs.org/gulp-file-include/-/gulp-file-include-1.1.0.tgz"
     },
     "files": [
         "lib"
     ],
-    "gitHead": "f0fc29f13119fa67909ca31292ee39b1e6a555f5",
+    "gitHead": "08ca0930d40ffdf0aea77fbc1b9e84e69fd34bf0",
     "homepage": "https://github.com/coderhaoxin/gulp-file-include#readme",
     "keywords": [
         "gulpplugin",
@@ -93,7 +95,7 @@
         "test-cov": "istanbul cover node_modules/.bin/_mocha -- -R dot -t 200 test/*.js",
         "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- -R dot -t 200 test/*.js"
     },
-    "version": "1.0.0"
+    "version": "1.1.0"
 }
 ```
 
