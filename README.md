@@ -1,9 +1,14 @@
-# api documentation for  [gulp-file-include (v1.1.0)](https://github.com/coderhaoxin/gulp-file-include#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-file-include.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-file-include) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-file-include.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-file-include)
+# npmdoc-gulp-file-include
+
+#### api documentation for  [gulp-file-include (v1.1.0)](https://github.com/coderhaoxin/gulp-file-include#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-file-include.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-file-include) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-file-include.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-file-include)
+
 #### a gulp plugin for file include
 
-[![NPM](https://nodei.co/npm/gulp-file-include.png?downloads=true)](https://www.npmjs.com/package/gulp-file-include)
+[![NPM](https://nodei.co/npm/gulp-file-include.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-file-include)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-gulp-file-include%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-file-include/build/screenCapture.npmPackageListing.svg)
 
@@ -24,12 +29,10 @@
     },
     "contributors": [
         {
-            "name": "Bogdan Chadkin",
-            "email": "trysound@yandex.ru"
+            "name": "Bogdan Chadkin"
         },
         {
-            "name": "Arthur Araújo",
-            "email": "webarthur@gmail.com"
+            "name": "Arthur Araújo"
         }
     ],
     "dependencies": {
@@ -70,21 +73,17 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "coderhaoxin",
-            "email": "coderhaoxin@outlook.com"
+            "name": "coderhaoxin"
         },
         {
-            "name": "trysound",
-            "email": "trysound@yandex.ru"
+            "name": "trysound"
         },
         {
-            "name": "haoxins",
-            "email": "haoxins@icloud.com"
+            "name": "haoxins"
         }
     ],
     "name": "gulp-file-include",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/coderhaoxin/gulp-file-include.git"
@@ -95,19 +94,10 @@
         "test-cov": "istanbul cover node_modules/.bin/_mocha -- -R dot -t 200 test/*.js",
         "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- -R dot -t 200 test/*.js"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module gulp-file-include](#apidoc.module.gulp-file-include)
-
-
-
-# <a name="apidoc.module.gulp-file-include"></a>[module gulp-file-include](#apidoc.module.gulp-file-include)
 
 
 
