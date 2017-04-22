@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/coderhaoxin/gulp-file-include#readme"
-
-    >gulp-file-include (v1.1.0)</a>
+    <a href="https://github.com/coderhaoxin/gulp-file-include#readme">gulp-file-include (v1.1.0)</a>
 </h1>
 <h4>a gulp plugin for file include</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-file-include">module gulp-file-include</a><ol>
 
@@ -86,30 +79,30 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">gulp-file-include = function (opts) {
-  if (typeof opts === &#x27;string&#x27;) {
+  if (typeof opts === 'string') {
     opts = {prefix: opts};
   }
 
   opts = extend({}, {
-    basepath: &#x27;@file&#x27;,
-    prefix: &#x27;@@&#x27;,
-    suffix: &#x27;&#x27;,
+    basepath: '@file',
+    prefix: '@@',
+    suffix: '',
     context: {},
     filters: false,
     indent: false
   }, opts);
 
-  if (opts.basepath !== &#x27;@file&#x27;) {
-    opts.basepath = opts.basepath === &#x27;@root&#x27; ? process.cwd() : path.resolve(opts.basepath);
+  if (opts.basepath !== '@file') {
+    opts.basepath = opts.basepath === '@root' ? process.cwd() : path.resolve(opts.basepath);
   }
 
   var customWebRoot = !!opts.context.webRoot;
 
   function fileInclude(file, enc, cb) {
     if (!customWebRoot) {
-      // built-in webRoot variable, example usage: &#x3c;link rel=stylesheet href=@@webRoot/style.css&#x3e;
+      // built-in webRoot variable, example usage: &lt;link rel=stylesheet href=@@webRoot/style.css&gt;
       opts.context.webRoot =
-        path.relative(path.dirname(file.path), file.base).replace(/\\/g, &#x27;/&#x27;) || &#x27;.&#x27;;
+        path.relative(path.dirname(file.path), file.base).replace(/\\/g, '/') || '.';
       }
 
     if (file.isNull()) {
@@ -120,7 +113,7 @@
           data = include(file, String(data));
           cb(null, data);
         } catch (e) {
-          cb(new gutil.PluginError(&#x27;gulp-file-include&#x27;, e.message));
+          cb(new gutil.PluginError('gulp-file-include', e.message));
         }
       }));
     } else if (file.isBuffer()) {
@@ -128,7 +121,7 @@
         file = include(file, String(file.contents));
         cb(null, file);
       } catch (e) {
-        cb(new gutil.PluginError(&#x27;gulp-file-include&#x27;, e.message));
+        cb(new gutil.PluginError('gulp-file-include', e.message));
       }
     }
   }
@@ -139,13 +132,13 @@
    * utils
    */
 </span>  function stripCommentedIncludes(content, opts) {
-    // remove single line html comments that use the format: &#x3c;!-- @@include() --&#x3e;
-    var regex = new RegExp(&#x27;&#x3c;\!--(.*)&#x27; + opts.prefix + &#x27;[ ]*include([\\s\\S]*?)[ ]*&#x27; + opts.suffix + &#x27;--&#x3e;&#x27;, &#x27;g&#x27;);
-    return content.replace(regex, &#x27;&#x27;);
+    // remove single line html comments that use the format: &lt;!-- @@include() --&gt;
+    var regex = new RegExp('&lt;\!--(.*)' + opts.prefix + '[ ]*include([\\s\\S]*?)[ ]*' + opts.suffix + '--&gt;', 'g');
+    return content.replace(regex, '');
   }
 
   function include(file, text, data) {
-    var filebase = opts.basepath === &#x27;@file&#x27; ? path.dirname(file.path) : opts.basepath;
+    var filebase = opts.basepath === '@file' ? path.dirname(file.path) : opts.basepath;
     var currentFilename = path.resolve(file.base, file.path);
 
     data = extend(true, {}, opts.context, data || {});
@@ -155,40 +148,40 @@
     text = replaceOperator(text, {
       prefix: opts.prefix,
       suffix: opts.suffix,
-      name: &#x27;if&#x27;,
+      name: 'if',
       handler: conditionalHandler
     });
     text = replaceOperator(text, {
       prefix: opts.prefix,
       suffix: opts.suffix,
-      name: &#x27;for&#x27;,
+      name: 'for',
       handler: forHandler
     });
     text = replaceVariable(text, data, opts);
     text = replaceFunction(text, {
       prefix: opts.prefix,
       suffix: opts.suffix,
-      name: &#x27;include&#x27;,
+      name: 'include',
       handler: includeHandler
     });
     text = replaceFunction(text, {
       prefix: opts.prefix,
       suffix: opts.suffix,
-      name: &#x27;loop&#x27;,
+      name: 'loop',
       handler: loopHandler
     });
 
     function conditionalHandler(inst) {
       // jshint ignore: start
-      var condition = new Function(&#x27;var context = this; with (context) { return &#x27; + inst.args + &#x27;; }&#x27;).call(data);
+      var condition = new Function('var context = this; with (context) { return ' + inst.args + '; }').call(data);
       // jshint ignore: end
 
-      return condition ? inst.body : &#x27;&#x27;;
+      return condition ? inst.body : '';
     }
 
     function forHandler(inst) {
-      var condition = &#x27;var context = this; with (context) { var result=&#x22;&#x22;; for&#x27; + inst.args + &#x27; { result+=`&#x27; + inst.body + &#x27;`; }
-return result; }&#x27;;
+      var condition = 'var context = this; with (context) { var result=""; for' + inst.args + ' { result+=`' + inst.body + '`; }
+return result; }';
       // jshint ignore: start
       var result = new Function(condition).call(data);
       // jshint ignore: end
@@ -197,26 +190,26 @@ return result; }&#x27;;
     }
 
     function includeHandler(inst) {
-      var args = /[^)&#x22;\&#x27;]*[&#x22;\&#x27;]([^&#x22;\&#x27;]*)[&#x22;\&#x27;](,\s*({[\s\S]*})){0,1}\s*/.exec(inst.args);
+      var args = /[^)"\']*["\']([^"\']*)["\'](,\s*({[\s\S]*})){0,1}\s*/.exec(inst.args);
 
       if (args) {
         var includePath = path.resolve(filebase, args[1]);
         // for checking if we are not including the current file again
         if (currentFilename.toLowerCase() === includePath.toLowerCase()) {
-          throw new Error(&#x27;recursion detected in file: &#x27; + currentFilename);
+          throw new Error('recursion detected in file: ' + currentFilename);
         }
 
-        var includeContent = fs.readFileSync(includePath, &#x27;utf-8&#x27;);
+        var includeContent = fs.readFileSync(includePath, 'utf-8');
 
         if (opts.indent) {
           includeContent = setIndent(inst.before, inst.before.length, includeContent);
         }
 
         // need to double each `$` to escape it in the `replace` function
-        // includeContent = includeContent.replace(/\$/gi, &#x27;$$$$&#x27;);
+        // includeContent = includeContent.replace(/\$/gi, '$$$$');
 
         // apply filters on include content
-        if (typeof opts.filters === &#x27;object&#x27;) {
+        if (typeof opts.filters === 'object') {
           includeContent = applyFilters(includeContent, args.input);
         }
 
@@ -233,3 +226,4 @@ return result; }&#x27;;
     ]
 </div>
 </div>
+</body></html>
